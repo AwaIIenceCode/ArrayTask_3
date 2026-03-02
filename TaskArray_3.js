@@ -16,14 +16,27 @@ function printArray(userArray)
 // function for shift to the right elements of array
 function shiftRight(userArray)
 {   
-    let lastElement = userArray[userArray.length - 1];
+    let firstElement = userArray[userArray.length - 1];
 
     for (let i = userArray.length - 1; i > 0; i--)
     {
         userArray[i] = userArray[i - 1];
     }
 
-    userArray[0] = lastElement;
+    userArray[0] = firstElement;
+}
+
+// function for shift to the left elements of array
+function shiftLeft(userArray)
+{
+    let lastElement = userArray[0];
+    
+    for (let i = 0; i < userArray.length; i++)
+    {
+        userArray[i] = userArray[i + 1];
+    }
+
+    userArray[userArray.length - 1] = lastElement;
 }
 
 function main()
@@ -36,6 +49,8 @@ function main()
 
     shiftRight(userArray);
     printArray(userArray);
-}
 
+    shiftLeft(userArray);
+    printArray(userArray);
+}
 main();
