@@ -52,6 +52,17 @@ function swapIndex(userArray)
     }
 }
 
+// function for reverse numbers neighboring indices
+function reverseArray(userArray)
+{
+    for (let i = 0; i < Math.floor(userArray.length / 2); i ++)
+    {
+       let temp = userArray[i];
+       userArray[i] = userArray[userArray.length - i - 1];
+       userArray[userArray.length - i - 1] = temp;
+    }
+}
+
 function main()
 {
     const arraySize = 20;
@@ -67,6 +78,9 @@ function main()
     printArray(userArray);
 
     swapIndex(userArray);
+    printArray(userArray);
+
+    reverseArray(userArray);
     printArray(userArray);
 }
 main();
