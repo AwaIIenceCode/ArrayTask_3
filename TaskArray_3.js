@@ -39,6 +39,21 @@ function shiftLeft(userArray)
     userArray[userArray.length - 1] = lastElement;
 }
 
+// function for swap numbers neighboring indices
+function swapIndex(userArray)
+{
+    for (let i = 0; i < userArray.length; i++)
+    {
+        let temp = userArray[i];
+        let j = [i + 1];
+
+        userArray[i] = userArray[j];
+        userArray[j] = temp;
+
+        i++;
+    }
+}
+
 function main()
 {
     const arraySize = 20;
@@ -51,6 +66,9 @@ function main()
     printArray(userArray);
 
     shiftLeft(userArray);
+    printArray(userArray);
+
+    swapIndex(userArray);
     printArray(userArray);
 }
 main();
